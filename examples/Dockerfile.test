@@ -1,0 +1,6 @@
+FROM alpine
+LABEL export="/opt/out"
+WORKDIR /opt/out
+RUN echo "hello world" > out.txt
+RUN dd if=/dev/zero of=upload_test bs=1M count=5
+RUN mkdir dir2 && dd if=/dev/zero of=dir2/large_file bs=1M count=5
